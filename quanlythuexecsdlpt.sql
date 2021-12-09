@@ -130,7 +130,7 @@ ALTER TABLE users_ ADD CONSTRAINT roles_id FOREIGN KEY (roleid) REFERENCES roles
 -- Các ràng buộc cho bảng contract
 --
 ALTER TABLE contract ADD CONSTRAINT car_id FOREIGN KEY (carid) REFERENCES car (carid);
-ALTER TABLE contract ADD CONSTRAINT use_id FOREIGN KEY (userid) REFERENCES users (userid);
+ALTER TABLE contract ADD CONSTRAINT use_id FOREIGN KEY (userid) REFERENCES users_ (userid);
 
 INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (1, 'Nguoi dung', '--');
 
