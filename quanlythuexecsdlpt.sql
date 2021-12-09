@@ -119,18 +119,18 @@ ALTER TABLE users_
 --
 -- Các ràng buộc cho bảng car
 --
-ALTER TABLE car ADD CONSTRAINT user_id FOREIGN KEY (ownerid) REFERENCES users_ (userid);
-ALTER TABLE car ADD CONSTRAINT brand_id FOREIGN KEY (brandid) REFERENCES brands (brandid);
+ALTER TABLE car ADD CONSTRAINT user_id FOREIGN KEY (ownerid) REFERENCES users (id);
+ALTER TABLE car ADD CONSTRAINT brand_id FOREIGN KEY (brandid) REFERENCES brands (id);
 --
 -- Các ràng buộc cho bảng user
 --
-ALTER TABLE users ADD CONSTRAINT roles_id FOREIGN KEY (roleid) REFERENCES roles_ (roleid);
+ALTER TABLE users ADD CONSTRAINT roles_id FOREIGN KEY (role_id) REFERENCES roles (id);
 
 --
 -- Các ràng buộc cho bảng contract
 --
+
 ALTER TABLE contract ADD CONSTRAINT car_id FOREIGN KEY (carid) REFERENCES car (carid);
-ALTER TABLE contract ADD CONSTRAINT use_id FOREIGN KEY (userid) REFERENCES users (userid);
 
 INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (1, 'Nguoi dung', '--');
 
@@ -277,6 +277,7 @@ INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,pho
 
 alter session set nls_date_format='yyyy-mm-dd';
 
+CN HCM:
 INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0002', 'USER001', 'Yamaha', 'T002', '59B1-11242', '02', 5000000, '2021-11-25','Xang');
 INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0001', 'USER001', 'Lamboghini', 'T001', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0004', 'USER004', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
@@ -286,34 +287,37 @@ INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, ren
 INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0008', 'USER008', 'Huyndai', 'T007', '59B1-12345', '02', 10000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0009', 'USER009', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0010', 'USER010', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0011', 'USER011', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0012', 'USER012', 'Yamaha', 'T002', '59B1-17775', '02', 5000000, '2021-11-25', 'Xang'),
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0013', 'USER013', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0014', 'USER014', 'Aston Martin 1', 'T014', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0015', 'USER001', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0016', 'USER016', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0017', 'USER017', 'Yamaha', 'T016', '59B1-11242', '02', 5000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0018', 'USER018', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0019', 'USER004', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0020', 'USER001', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
+
+CN HN:
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0011', 'USER061', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0012', 'USER062', 'Yamaha', 'T002', '59B1-17775', '02', 5000000, '2021-11-25', 'Xang'),
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0013', 'USER063', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0014', 'USER064', 'Aston Martin 1', 'T014', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0015', 'USER065', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0016', 'USER066', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0017', 'USER067', 'Yamaha', 'T016', '59B1-11242', '02', 5000000, '2021-11-25', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0018', 'USER068', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0019', 'USER068', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
+INSERT INTO car (carid, ownercarid, carname, branid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0020', 'USER051', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
+
 
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER001', 'XE0001','2021-11-23', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER002', 'XE0002', '2021-11-23', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER002', 'XE0003','2021-11-23', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER004', 'XE0004', '2021-11-23', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER005', 'XE0005', '2021-11-24', '2021-11-27');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER055', 'XE0005', '2021-11-24', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER006', 'XE0006', '2021-11-24', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER007', 'XE0007', '2021-11-24', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER004', 'XE0004', '2021-11-24', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER005', 'XE0005', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER006', 'XE0006', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER011', 'XE0011','2021-11-24', '2021-11-27');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER066', 'XE0006', '2021-11-24', '2021-11-27');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER021', 'XE0011','2021-11-24', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER012', 'XE0009', '2021-11-24', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER012', 'XE0013', '2021-11-24', '2021-11-27');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER014', 'XE0010', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER015', 'XE0015', '2021-11-23', '2021-11-30');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER055', 'XE0015', '2021-11-23', '2021-11-30');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER016', 'XE0016', '2021-11-23', '2021-11-30');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER017', 'XE0017', '2021-11-23', '2021-11-30');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER067', 'XE0017', '2021-11-23', '2021-11-30');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER018', 'XE0018', '2021-11-23', '2021-11-30');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER019', 'XE0019','2021-11-23', '2021-11-30');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER029', 'XE0019','2021-11-23', '2021-11-30');
 INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER020', 'XE0020', '2021-11-23', '2021-11-30');
