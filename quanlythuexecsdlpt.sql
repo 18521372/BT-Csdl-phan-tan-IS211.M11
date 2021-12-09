@@ -287,7 +287,7 @@ INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentc
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0009', 'USER009', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0010', 'USER010', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0011', 'USER011', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0012', 'USER012', 'Yamaha', 'T002', '59B1-17775', '02', 5000000, '2021-11-25', 'Xang'),
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0012', 'USER012', 'Yamaha', 'T002', '59B1-17775', '02', 5000000, '2021-11-25', 'Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0013', 'USER013', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0014', 'USER014', 'Aston Martin 1', 'T014', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0015', 'USER001', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
