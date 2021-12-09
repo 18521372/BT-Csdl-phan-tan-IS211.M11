@@ -97,7 +97,9 @@ ALTER TABLE car
 --  Khóa cho bảng usercar
 --
 ALTER TABLE contract
-  ADD PRIMARY KEY (userid,carid);
+  ADD PRIMARY KEY (userid,carid,startdate);
+ALTER TABLE contract
+  drop PRIMARY KEY ;
 
 --
 --  Khóa cho bảng roles
@@ -150,21 +152,21 @@ INSERT INTO brands (id, name, nation, logo) VALUES ('T004', 'Toyota', 'Japan', '
 INSERT INTO brands (id, name, nation, logo) VALUES ('T005', 'Isuzu', 'Japan', '--');
 INSERT INTO brands (id, name, nation, logo) VALUES ('T006', 'KIA', 'Korea', '--');
 INSERT INTO brands (id, name, nation, logo) VALUES ('T007', 'Mercedes Benz', 'Germany', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T008', 'BMW', 'Germany', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T010', 'Audi', 'Germany', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T011', 'Lamborghini', 'Italia', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T012', 'Volvo', 'Switzerland', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T013', 'Maserati', 'Italia', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T014', 'Aston Martin', 'England', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T015', 'Bently', 'England', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T016', 'Vinfast', 'Vietnam', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T017', 'Mitsubishi', 'Japan', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T018', 'Chevrolet', 'USA', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T019', 'Lexus', 'Japan', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T020', 'Mazda', 'Japan', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T021', 'Nissan', 'Japan', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T022', 'Subaru', 'Japan', '');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T023', 'Mini Cooper', 'England', '');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T008', 'BMW', 'Germany', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T010', 'Audi', 'Germany', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T011', 'Lamborghini', 'Italia', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T012', 'Volvo', 'Switzerland', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T013', 'Maserati', 'Italia', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T014', 'Aston Martin', 'England', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T015', 'Bently', 'England', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T016', 'Vinfast', 'Vietnam', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T017', 'Mitsubishi', 'Japan', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T018', 'Chevrolet', 'USA', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T019', 'Lexus', 'Japan', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T020', 'Mazda', 'Japan', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T021', 'Nissan', 'Japan', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T022', 'Subaru', 'Japan', '--');
+INSERT INTO brands (id, name, nation, logo) VALUES ('T023', 'Mini Cooper', 'England', '--');
 
 
 cn hcm:
@@ -271,6 +273,7 @@ INSERT INTO users(id,fullname,email,adress,gender,idcard,password,phonenumber,ro
 INSERT INTO users(id,fullname,email,adress,gender,idcard,password,phonenumber,role_id,Branch) VALUES('USER100','phan thi hong nhung','phan thi hong nhung@gmail.com','364 Hoàng Hoa Thám','Female','552609863','62xCk6y7','0552609863',0,'Ha Noi');
 
 alter session set nls_date_format='yyyy-mm-dd';
+INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0003', 'USER001', 'Yamaha', 'T002', '59B1-11242', '02', 5000000, '2021-11-25','Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0002', 'USER001', 'Yamaha', 'T002', '59B1-11242', '02', 5000000, '2021-11-25','Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0001', 'USER001', 'Lamboghini', 'T001', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0004', 'USER004', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25',  'Xang');
@@ -281,7 +284,7 @@ INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, p
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0009', 'USER009', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25',  'Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0010', 'USER010', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0011', 'USER011', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25',  'Xang');
-INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0012', 'USER012', 'Yamaha', 'T002', '59B1-17775', '02', 5000000, '2021-11-25',  'Xang'),
+INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0012', 'USER012', 'Yamaha', 'T002', '59B1-17775', '02', 5000000, '2021-11-25',  'Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0013', 'USER013', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25',  'Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0014', 'USER014', 'Aston Martin 1', 'T014', '60B1-12425', '01', 50000000, '2021-12-25',  'Xang');
 INSERT INTO car (id, ownerid, name, brandid, carNumberPlate, status, rentcost, postdated,   Fuel) VALUES ('XE0015', 'USER001', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20',  'Xang');
