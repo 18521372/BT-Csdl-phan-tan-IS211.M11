@@ -97,7 +97,7 @@ ALTER TABLE car
 --
 ALTER TABLE contract
   ADD PRIMARY KEY (userid,carid,startdate);
-ALTER TABLE contract
+
 
 
 --
@@ -119,8 +119,8 @@ ALTER TABLE users_
 --
 -- Các ràng buộc cho bảng car
 --
-ALTER TABLE car ADD CONSTRAINT user_id FOREIGN KEY (ownerid) REFERENCES users_ (id);
-ALTER TABLE car ADD CONSTRAINT brand_id FOREIGN KEY (brandid) REFERENCES brands (id);
+ALTER TABLE car ADD CONSTRAINT user_id FOREIGN KEY (ownerid) REFERENCES users_ (userid);
+ALTER TABLE car ADD CONSTRAINT brand_id FOREIGN KEY (brandid) REFERENCES brands (brandid);
 --
 -- Các ràng buộc cho bảng user
 --
