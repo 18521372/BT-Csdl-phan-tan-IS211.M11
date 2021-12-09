@@ -145,28 +145,28 @@ INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (3, 'DEV', '--')
 
 
 
-INSERT INTO brands (id, name, nation, logo) VALUES ('T001', 'FORD', 'USA', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T002', 'Honda', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T003', 'Hyundai', 'Korea', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T004', 'Toyota', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T005', 'Isuzu', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T006', 'KIA', 'Korea', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T007', 'Mercedes Benz', 'Germany', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T008', 'BMW', 'Germany', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T010', 'Audi', 'Germany', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T011', 'Lamborghini', 'Italia', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T012', 'Volvo', 'Switzerland', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T013', 'Maserati', 'Italia', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T014', 'Aston Martin', 'England', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T015', 'Bently', 'England', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T016', 'Vinfast', 'Vietnam', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T017', 'Mitsubishi', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T018', 'Chevrolet', 'USA', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T019', 'Lexus', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T020', 'Mazda', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T021', 'Nissan', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T022', 'Subaru', 'Japan', '--');
-INSERT INTO brands (id, name, nation, logo) VALUES ('T023', 'Mini Cooper', 'England', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T001', 'FORD', 'USA', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T002', 'Honda', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T003', 'Hyundai', 'Korea', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T004', 'Toyota', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T005', 'Isuzu', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T006', 'KIA', 'Korea', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T007', 'Mercedes Benz', 'Germany', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T008', 'BMW', 'Germany', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T010', 'Audi', 'Germany', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T011', 'Lamborghini', 'Italia', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T012', 'Volvo', 'Switzerland', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T013', 'Maserati', 'Italia', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T014', 'Aston Martin', 'England', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T015', 'Bently', 'England', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T016', 'Vinfast', 'Vietnam', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T017', 'Mitsubishi', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T018', 'Chevrolet', 'USA', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T019', 'Lexus', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T020', 'Mazda', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T021', 'Nissan', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T022', 'Subaru', 'Japan', '--');
+INSERT INTO brands (brandid, name, nation, logo) VALUES ('T023', 'Mini Cooper', 'England', '--');
 
 
 
