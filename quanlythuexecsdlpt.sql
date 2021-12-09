@@ -124,7 +124,7 @@ ALTER TABLE car ADD CONSTRAINT brand_id FOREIGN KEY (brandid) REFERENCES brands 
 --
 -- Các ràng buộc cho bảng user
 --
-ALTER TABLE users ADD CONSTRAINT roles_id FOREIGN KEY (roleid) REFERENCES roles_ (roleid);
+ALTER TABLE users_ ADD CONSTRAINT roles_id FOREIGN KEY (roleid) REFERENCES roles_ (roleid);
 
 --
 -- Các ràng buộc cho bảng contract
