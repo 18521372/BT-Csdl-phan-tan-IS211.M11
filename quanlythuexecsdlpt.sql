@@ -1,4 +1,4 @@
---sua cho cònlict
+-- Nhi nè
 -- Cơ sở dữ liệu: quanlythuexe
 --
 
