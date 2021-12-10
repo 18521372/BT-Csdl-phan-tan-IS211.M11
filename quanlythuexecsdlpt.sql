@@ -1,4 +1,4 @@
---sua thu
+--sua cho cònlict
 -- Cơ sở dữ liệu: quanlythuexe
 --
 
