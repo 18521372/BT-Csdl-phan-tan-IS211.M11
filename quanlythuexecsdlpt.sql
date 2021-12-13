@@ -1,4 +1,4 @@
--- Nhi nè
+-- 
 -- Cơ sở dữ liệu: quanlythuexe
 --
 
