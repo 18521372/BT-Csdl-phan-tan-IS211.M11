@@ -11,8 +11,7 @@
 CREATE TABLE brands (
   brandid varchar2(10) NOT NULL,
   brandname varchar2(40) NOT NULL,
-  nation varchar2(40) NOT NULL,
-  logo varchar2(100) NOT NULL
+  nation varchar2(40) NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -26,7 +25,7 @@ CREATE TABLE car (
   ownerid varchar2(10) NOT NULL,
   carname varchar2(40) NOT NULL,
   carNumberPlate varchar2(40) NOT NULL,
-  status varchar2(2) NOT NULL,
+  status varchar2(40) NOT NULL,
   rentcost number NOT NULL,
   postdated date NOT NULL,
   brandid varchar2(100) NOT NULL,
@@ -70,7 +69,7 @@ CREATE TABLE users_ (
   userid varchar2(10) NOT NULL,
   fullname varchar2(40) NOT NULL,
   email varchar2(40) NOT NULL,
-  adress varchar2(40) NOT NULL,
+  address varchar2(40) NOT NULL,
   gender varchar2(10) NOT NULL,
   idcard varchar2(40) NOT NULL,
   password_users varchar2(100) NOT NULL,
@@ -96,25 +95,21 @@ ALTER TABLE car
 --  Khóa cho bảng usercar
 --
 ALTER TABLE contract
-  ADD PRIMARY KEY (userid,carid,startdate);
+  ADD PRIMARY KEY (userid, carid, startdate);
 
 
 
 --
---  Khóa cho bảng roles
+--  Khóa cho bảng roles_
 --
 ALTER TABLE roles_
   ADD PRIMARY KEY (roleid);
 
 --
---  Khóa cho bảng users
+--  Khóa cho bảng users_
 --
 ALTER TABLE users_
   ADD PRIMARY KEY (userid);
-
---
--- Các ràng buộc cho các bảng đã đổ
---
 
 --
 -- Các ràng buộc cho bảng car
@@ -122,7 +117,7 @@ ALTER TABLE users_
 ALTER TABLE car ADD CONSTRAINT user_id FOREIGN KEY (ownerid) REFERENCES users_ (userid);
 ALTER TABLE car ADD CONSTRAINT brand_id FOREIGN KEY (brandid) REFERENCES brands (brandid);
 --
--- Các ràng buộc cho bảng user
+-- Các ràng buộc cho bảng users_
 --
 
 ALTER TABLE users_ ADD CONSTRAINT roles_id FOREIGN KEY (roleid) REFERENCES roles_ (roleid);
@@ -130,47 +125,39 @@ ALTER TABLE users_ ADD CONSTRAINT roles_id FOREIGN KEY (roleid) REFERENCES roles
 
 
 
-INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (1, 'Nguoi dung', '--');
-
-INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (2, 'quan ly', '--');
-
-INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (0, 'Da Huy', '--');
-
-INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (3, 'DEV', '--');
+INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (1, 'Nguoi dung', 'Nguoi su dung web');
+INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (2, 'quan ly', 'Nguoi quan ly he thong');
+INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (0, 'Da Huy', 'Nguoi dung da huy tai khoan');
+INSERT INTO roles_ (roleid, rolename, description_roles) VALUES (3, 'DEV', 'Developer');
 
 
 
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T001', 'FORD', 'USA');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T002', 'Honda', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T003', 'Hyundai', 'Korea');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T004', 'Toyota', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T005', 'Isuzu', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T006', 'KIA', 'Korea');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T007', 'Mercedes Benz', 'Germany');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T008', 'BMW', 'Germany');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T010', 'Audi', 'Germany');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T011', 'Lamborghini', 'Italia');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T012', 'Volvo', 'Switzerland');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T013', 'Maserati', 'Italia');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T014', 'Aston Martin', 'England');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T015', 'Bently', 'England');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T016', 'Vinfast', 'Vietnam');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T017', 'Mitsubishi', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T018', 'Chevrolet', 'USA');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T019', 'Lexus', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T020', 'Mazda', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T021', 'Nissan', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T022', 'Subaru', 'Japan');
+INSERT INTO brands (brandid, brandname, nation) VALUES ('T023', 'Mini Cooper', 'England');
 
 
 
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T001', 'FORD', 'USA', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T002', 'Honda', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T003', 'Hyundai', 'Korea', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T004', 'Toyota', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T005', 'Isuzu', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T006', 'KIA', 'Korea', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T007', 'Mercedes Benz', 'Germany', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T008', 'BMW', 'Germany', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T010', 'Audi', 'Germany', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T011', 'Lamborghini', 'Italia', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T012', 'Volvo', 'Switzerland', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T013', 'Maserati', 'Italia', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T014', 'Aston Martin', 'England', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T015', 'Bently', 'England', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T016', 'Vinfast', 'Vietnam', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T017', 'Mitsubishi', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T018', 'Chevrolet', 'USA', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T019', 'Lexus', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T020', 'Mazda', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T021', 'Nissan', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T022', 'Subaru', 'Japan', '--');
-INSERT INTO brands (brandid, brandname, nation, logo) VALUES ('T023', 'Mini Cooper', 'England', '--');
-
-
-
-
-
-cn hcm:
+Chi nhanh HCM:
 INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER001','nguyen dang khoa','nguyen dang khoa@gmail.com','590 dang thi nhu','Male','750128893','jX9L8aGw','0750128893',2,'Ho Chi Minh');
 INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER002','la thi hoan','la thi hoan@gmail.com','102 bui thi xuan','Female','121748852','fWFaB4PF','0121748852',3,'Ho Chi Minh');
 INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER003','phan ngoc tham','phan ngoc tham@gmail.com','365 huynh thuc khang','Female','334502921','4RDa5H7p','0334502921',3,'Ho Chi Minh');
@@ -221,60 +208,63 @@ INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,pho
 INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER048','dang huu ngoc','dang huu ngoc@gmail.com','263 ngo duc ke','Female','579196197','wWT8KefS','0579196197',2,'Ho Chi Minh');
 INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER049','nguyen thien khiem','nguyen thien khiem@gmail.com','329 nguyen binh khiem','Male','203982472','CxA5TmH4','0203982472',3,'Ho Chi Minh');
 INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER050','nguyen tuan dung','nguyen tuan dung@gmail.com','572 le cong kieu','Male','127906320','NafLAmPj','0127906320',3,'Ho Chi Minh');
-cn hanoi:
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER051','nguyen thi cuc','nguyen thi cuc@gmail.com','196 Lương Sử','Male','830949435','cVWq7HZ5','0830949435',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER052','nguyen xuan sang','nguyen xuan sang@gmail.com','13 Giải Phóng','Male','660306669','2T8MHh4n','0660306669',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER053','la van quyet','la van quyet@gmail.com','324 Hàng Thùng','Male','124156654','tNWu4zQm','0124156654',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER054','doan van dung','doan van dung@gmail.com','470 Bưởi','Male','222499197','GBjYqkae','0222499197',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER055','nguyen xuan coi','nguyen xuan coi@gmail.com','363 Hàng Bài','Male','514676274','XqejNNsk','0514676274',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER056','tran van nga','tran van nga@gmail.com','405 Phố Huế','Female','527025013','KqswEfXA','0527025013',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER057','tran tien cuong','tran tien cuong@gmail.com','265 Láng Hạ','Male','263973681','cdcDeJkK','0263973681',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER058','nguyen van manh','nguyen van manh@gmail.com','164 Bích Câu','Male','808247220','JzeXN6FC','0808247220',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER059','pham huu hang','pham huu hang@gmail.com','529 Hàng Bài','Male','211629826','TXYQcT9y','0211629826',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER060','pham thi hong','pham thi hong@gmail.com','111 Bích Câu','Male','154958695','sJUgB9tS','0154958695',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER061','truong quang tho','truong quang tho@gmail.com','139 Hàng Thùng','Male','887607772','D9FnKkav','0887607772',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER062','dang dinh tam','dang dinh tam@gmail.com','51 Hàng Thùng','Male','140205030','CnPAGSH5','0140205030',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER063','nguyen thi kim le','nguyen thi kim le@gmail.com','116 Láng Hạ','Female','592778200','Dbb8xJF9','0592778200',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER064','to anh dung','to anh dung@gmail.com','278 Đinh Tiên Hoàng','Male','339743891','7jwqaMjc','0339743891',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER065','nguyen dinh tam','nguyen dinh tam@gmail.com','544 Phố Huế','Male','786708472','fbbAczCg','0786708472',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER066','nguyen thi mai lan','nguyen thi mai lan@gmail.com','445 Đặng Văn Ngữ','Female','139956881','SNW4Laac','0139956881',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER067','le van loi','le van loi@gmail.com','401 Văn Miếu','Male','498977478','pKXLrYty','0498977478',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER068','nguyen hong chi','nguyen hong chi@gmail.com','47 Văn Miếu','Male','619280966','6GWVSeS8','0619280966',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER069','le van anh','le van anh@gmail.com','552 Hàng Tre','Male','490512902','hFaxWvZA','0490512902',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER070','nguyen thi bich lieu','nguyen thi bich lieu@gmail.com','577 Lê Duẩn','Female','579986757','Zkyj2hLT','0579986757',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER071','pham van hoan','pham van hoan@gmail.com','481 Bà Huyện Thanh Quan','Male','053869800','4Ej4VjRs','0053869800',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER072','nguyen dinh dong','nguyen dinh dong@gmail.com','435 Láng Hạ','Male','524184318','vRk8yV3s','0524184318',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER073','ngo thi phuong','ngo thi phuong@gmail.com','195 Lê Trọng Tấn','Female','793797222','MnETBGqm','0793797222',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER074','tran quoc toa','tran quoc toa@gmail.com','332 Hàng Dầu','Male','953779509','SGCpRpPy','0953779509',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER075','ngo nguyen ky vinh','ngo nguyen ky vinh@gmail.com','104 Võ Chí Công','Male','273634086','wSqcFZxH','0273634086',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER076','ngo van loi','ngo van loi@gmail.com','396 Khương Trung','Male','423426582','8dGDzUGx','0423426582',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER077','nguyen van hoang','nguyen van hoang@gmail.com','229 Bà Huyện Thanh Quan','Male','747072104','wcWEfRBk','0747072104',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER078','ton duc anh','ton duc anh@gmail.com','37 Đặng Văn Ngữ','Male','871446548','yWHTt2pU','0871446548',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER079','le tien thang','le tien thang@gmail.com','288 Lê Duẩn','Male','396473775','H8mdKN9L','0396473775',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER080','pham thanh duong','pham thanh duong@gmail.com','297 Bưởi','Male','563441136','TYJsFqtf','0563441136',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER081','truong ngoc hanh','truong ngoc hanh@gmail.com','100 Hoàng Hoa Thám','Female','143162781','VHG6Lyzq','0143162781',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER082','le van hoan','le van hoan@gmail.com','519 Láng Hạ','Male','344765643','HdusvgAp','0344765643',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER083','nguyen ngoc dong','nguyen ngoc dong@gmail.com','539 Hàng Thùng','Male','878191361','JtqP26ZX','0878191361',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER084','phan nguyen tan','phan nguyen tan@gmail.com','412 Phố Huế','Male','032445986','sWKKZaRg','0032445986',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER085','tra van khang','tra van khang@gmail.com','135 Khương Trung','Male','746628753','GtLNpBcn','0746628753',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER086','nguyen trong chinh','nguyen trong chinh@gmail.com','180 Giải Phóng','Male','098243162','yy2cmyTj','0098243162',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER087','le van my','le van my@gmail.com','417 Hàng Tre','Female','685446084','X3mxzUyx','0685446084',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER088','nguyen van hung','nguyen van hung@gmail.com','168 Hàng Khay','Male','512472219','w836zZAR','0512472219',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER089','nguyen ngoc dung','nguyen ngoc dung@gmail.com','139 Bưởi','Male','462377593','7vfpBskW','0462377593',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER090','dinh tien dat','dinh tien dat@gmail.com','72 Bưởi','Male','462096102','9nBzYbHM','0462096102',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER091','nguyen thanh hoa','nguyen thanh hoa@gmail.com','255 Văn Cao','Female','978139874','XTJpH9Xc','0978139874',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER092','nguyen xuan phuong','nguyen xuan phuong@gmail.com','253 Hàng Khay','Female','948258250','NhRSWNgH','0948258250',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER093','le ngoc tuan','le ngoc tuan@gmail.com','275 Hàng Bông','Male','565077476','e9cNumhN','0565077476',1,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER094','le dinh han','le dinh han@gmail.com','243 Văn Miếu','Male','609971525','zEYTJLsv','0609971525',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER095','nguyen van hanh','nguyen van hanh@gmail.com','413 Bà Huyện Thanh Quan','Male','443908815','dkK83aqa','0443908815',3,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER096','doan mai vinh khoa','doan mai vinh khoa@gmail.com','17 Hàng Tre','Male','997743136','rWwwY7Sm','0997743136',2,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER097','vu quang ngoc','vu quang ngoc@gmail.com','437 Bưởi','Male','503773882','S6AJEzYR','0503773882',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER098','do thai toan','do thai toan@gmail.com','569 Phố Huế','Male','388990955','hjphEzEc','0388990955',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER099','bui thi hai','bui thi hai@gmail.com','319 Hàng Bông','Female','610043863','88ExsdV4','0610043863',0,'Ha Noi');
-INSERT INTO users_(userid,fullname,email,adress,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER100','phan thi hong nhung','phan thi hong nhung@gmail.com','364 Hoàng Hoa Thám','Female','552609863','62xCk6y7','0552609863',0,'Ha Noi');
+
+Chi nhanh HN:
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER051','nguyen thi cuc','nguyen thi cuc@gmail.com','196 L??ng S?','Male','830949435','cVWq7HZ5','0830949435',3,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER052','nguyen xuan sang','nguyen xuan sang@gmail.com','13 Gi?i Phóng','Male','660306669','2T8MHh4n','0660306669',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER053','la van quyet','la van quyet@gmail.com','324 Hàng Thùng','Male','124156654','tNWu4zQm','0124156654',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER054','doan van dung','doan van dung@gmail.com','470 B??i','Male','222499197','GBjYqkae','0222499197',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER055','nguyen xuan coi','nguyen xuan coi@gmail.com','363 Hàng Bài','Male','514676274','XqejNNsk','0514676274',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER056','tran van nga','tran van nga@gmail.com','405 Ph? Hu?','Female','527025013','KqswEfXA','0527025013',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER057','tran tien cuong','tran tien cuong@gmail.com','265 Láng H?','Male','263973681','cdcDeJkK','0263973681',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER058','nguyen van manh','nguyen van manh@gmail.com','164 Bích Câu','Male','808247220','JzeXN6FC','0808247220',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER059','pham huu hang','pham huu hang@gmail.com','529 Hàng Bài','Male','211629826','TXYQcT9y','0211629826',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER060','pham thi hong','pham thi hong@gmail.com','111 Bích Câu','Male','154958695','sJUgB9tS','0154958695',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER061','truong quang tho','truong quang tho@gmail.com','139 Hàng Thùng','Male','887607772','D9FnKkav','0887607772',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER062','dang dinh tam','dang dinh tam@gmail.com','51 Hàng Thùng','Male','140205030','CnPAGSH5','0140205030',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER063','nguyen thi kim le','nguyen thi kim le@gmail.com','116 Láng H?','Female','592778200','Dbb8xJF9','0592778200',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER064','to anh dung','to anh dung@gmail.com','278 ?inh Tiên Hoàng','Male','339743891','7jwqaMjc','0339743891',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER065','nguyen dinh tam','nguyen dinh tam@gmail.com','544 Ph? Hu?','Male','786708472','fbbAczCg','0786708472',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER066','nguyen thi mai lan','nguyen thi mai lan@gmail.com','445 ??ng V?n Ng?','Female','139956881','SNW4Laac','0139956881',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER067','le van loi','le van loi@gmail.com','401 V?n Mi?u','Male','498977478','pKXLrYty','0498977478',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER068','nguyen hong chi','nguyen hong chi@gmail.com','47 V?n Mi?u','Male','619280966','6GWVSeS8','0619280966',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER069','le van anh','le van anh@gmail.com','552 Hàng Tre','Male','490512902','hFaxWvZA','0490512902',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER070','nguyen thi bich lieu','nguyen thi bich lieu@gmail.com','577 Lê Du?n','Female','579986757','Zkyj2hLT','0579986757',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER071','pham van hoan','pham van hoan@gmail.com','481 Bà Huy?n Thanh Quan','Male','053869800','4Ej4VjRs','0053869800',2,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER072','nguyen dinh dong','nguyen dinh dong@gmail.com','435 Láng H?','Male','524184318','vRk8yV3s','0524184318',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER073','ngo thi phuong','ngo thi phuong@gmail.com','195 Lê Tr?ng T?n','Female','793797222','MnETBGqm','0793797222',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER074','tran quoc toa','tran quoc toa@gmail.com','332 Hàng D?u','Male','953779509','SGCpRpPy','0953779509',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER075','ngo nguyen ky vinh','ngo nguyen ky vinh@gmail.com','104 Võ Chí Công','Male','273634086','wSqcFZxH','0273634086',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER076','ngo van loi','ngo van loi@gmail.com','396 Kh??ng Trung','Male','423426582','8dGDzUGx','0423426582',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER077','nguyen van hoang','nguyen van hoang@gmail.com','229 Bà Huy?n Thanh Quan','Male','747072104','wcWEfRBk','0747072104',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER078','ton duc anh','ton duc anh@gmail.com','37 ??ng V?n Ng?','Male','871446548','yWHTt2pU','0871446548',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER079','le tien thang','le tien thang@gmail.com','288 Lê Du?n','Male','396473775','H8mdKN9L','0396473775',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER080','pham thanh duong','pham thanh duong@gmail.com','297 B??i','Male','563441136','TYJsFqtf','0563441136',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER081','truong ngoc hanh','truong ngoc hanh@gmail.com','100 Hoàng Hoa Thám','Female','143162781','VHG6Lyzq','0143162781',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER082','le van hoan','le van hoan@gmail.com','519 Láng H?','Male','344765643','HdusvgAp','0344765643',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER083','nguyen ngoc dong','nguyen ngoc dong@gmail.com','539 Hàng Thùng','Male','878191361','JtqP26ZX','0878191361',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER084','phan nguyen tan','phan nguyen tan@gmail.com','412 Ph? Hu?','Male','032445986','sWKKZaRg','0032445986',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER085','tra van khang','tra van khang@gmail.com','135 Kh??ng Trung','Male','746628753','GtLNpBcn','0746628753',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER086','nguyen trong chinh','nguyen trong chinh@gmail.com','180 Gi?i Phóng','Male','098243162','yy2cmyTj','0098243162',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER087','le van my','le van my@gmail.com','417 Hàng Tre','Female','685446084','X3mxzUyx','0685446084',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER088','nguyen van hung','nguyen van hung@gmail.com','168 Hàng Khay','Male','512472219','w836zZAR','0512472219',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER089','nguyen ngoc dung','nguyen ngoc dung@gmail.com','139 B??i','Male','462377593','7vfpBskW','0462377593',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER090','dinh tien dat','dinh tien dat@gmail.com','72 B??i','Male','462096102','9nBzYbHM','0462096102',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER091','nguyen thanh hoa','nguyen thanh hoa@gmail.com','255 V?n Cao','Female','978139874','XTJpH9Xc','0978139874',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER092','nguyen xuan phuong','nguyen xuan phuong@gmail.com','253 Hàng Khay','Female','948258250','NhRSWNgH','0948258250',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER093','le ngoc tuan','le ngoc tuan@gmail.com','275 Hàng Bông','Male','565077476','e9cNumhN','0565077476',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER094','le dinh han','le dinh han@gmail.com','243 V?n Mi?u','Male','609971525','zEYTJLsv','0609971525',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER095','nguyen van hanh','nguyen van hanh@gmail.com','413 Bà Huy?n Thanh Quan','Male','443908815','dkK83aqa','0443908815',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER096','doan mai vinh khoa','doan mai vinh khoa@gmail.com','17 Hàng Tre','Male','997743136','rWwwY7Sm','0997743136',1,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER097','vu quang ngoc','vu quang ngoc@gmail.com','437 B??i','Male','503773882','S6AJEzYR','0503773882',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER098','do thai toan','do thai toan@gmail.com','569 Ph? Hu?','Male','388990955','hjphEzEc','0388990955',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER099','bui thi hai','bui thi hai@gmail.com','319 Hàng Bông','Female','610043863','88ExsdV4','0610043863',0,'Ha Noi');
+INSERT INTO users_(userid,fullname,email,address,gender,idcard,password_users,phonenumber,roleid,Branch) VALUES('USER100','phan thi hong nhung','phan thi hong nhung@gmail.com','364 Hoàng Hoa Thám','Female','552609863','62xCk6y7','0552609863',3,'Ha Noi');
+
 
 alter session set nls_date_format='yyyy-mm-dd';
-CN HCM:
+
+Chi nhánh HCM:
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0002', 'USER001', 'Yamaha', 'T002', '59B1-11242', '02', 5000000, '2021-11-25','Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0001', 'USER001', 'Lamboghini', 'T001', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0004', 'USER004', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
@@ -285,37 +275,48 @@ INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentc
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0009', 'USER009', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
 INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0010', 'USER010', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
 
-CN HN:
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0011', 'USER061', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0012', 'USER062', 'Yamaha', 'T002', '59B1-17775', '02', 5000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0013', 'USER063', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0014', 'USER064', 'Aston Martin 1', 'T014', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0015', 'USER065', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0016', 'USER066', 'Bugatti', 'T006', '59B1-77777', '01', 52000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0017', 'USER067', 'Yamaha', 'T016', '59B1-11242', '02', 5000000, '2021-11-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0018', 'USER068', 'Lamboghini', 'T003', '59B1-21412', '01', 10000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0019', 'USER068', 'Rollroyce', 'T004', '60B1-12425', '01', 50000000, '2021-12-25', 'Xang');
-INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0020', 'USER051', 'Ferrari', 'T005', '59B1-99999', '01', 55000000, '2021-11-20', 'Xang');
+Chi nhánh HN:
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0021', 'USER061', 'KIA B1', 'T006', '50B1-77777', 'Available', 52000000, '2020-9-25', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0022', 'USER062', 'Honda A3', 'T002', '59G1-17775', 'Not Available', 5000000, '2020-1-17', 'Dau');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0023', 'USER063', 'Hyundai H6', 'T003', '42B1-21412', 'Available', 13000000, '2020-5-1', 'Dau');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0024', 'USER064', 'Aston Martin 1', 'T014', '60B1-12425', 'Available', 30000000, '2020-8-29', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0025', 'USER065', 'Isuzu I3', 'T005', '71W1-99999', 'Not Available', 55000000, '2020-11-20', 'Dau');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0026', 'USER066', 'KIA A3', 'T006', '11B1-77337', 'Available', 22000000, '2020-3-8', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0027', 'USER067', 'Vinfast V2', 'T016', '48B1-11242', 'Not Available', 7000000, '2020-10-13', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0028', 'USER068', 'Hyundai H2', 'T003', '60P1-21392', 'Available', 8000000, '2020-8-9', 'Dau');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0029', 'USER068', 'Toyota T3', 'T004', '71B1-19845', 'Not Available', 34000000, '2020-6-25', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0030', 'USER075', 'Isuzu I4', 'T005', '41U1-27199', 'Available', 60000000, '2020-5-4', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0031', 'USER091', 'Chevrolet C5', 'T018', '33T1-93719', 'Available', 25000000, '2020-12-9', 'Dau');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0032', 'USER085', 'FORD F2', 'T001', '75Y1-91431', 'Not Available', 70000000, '2020-11-22', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0033', 'USER064', 'Subaru S3', 'T022', '55A1-83742', 'Available', 24000000, '2020-12-22', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0034', 'USER088', 'Bently B1', 'T015', '59C1-82917', 'Available', 33000000, '2020-5-8', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0035', 'USER052', 'Lamborghini L3', 'T011', '59A1-19374', 'Not Available', 80000000, '2020-9-15', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0036', 'USER075', 'Mini Cooper M4', 'T023', '59F1-01835', 'Available', 58000000, '2020-1-18', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0037', 'USER088', 'Mercedes Benz M1', 'T007', '59D1-19237', 'Available', 72000000, '2020-4-20', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0038', 'USER095', 'Hyundai H2', 'T003', '59E1-11923', 'Not Available', 9000000, '2020-9-3', 'Dau');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0039', 'USER075', 'Toyota T5', 'T004', '59B1-37462', 'Available', 12000000, '2020-7-25', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0040', 'USER052', 'Volvo V3', 'T012', '59F1-20183', 'Not Available', 37000000, '2020-4-1', 'Xang');
+INSERT INTO car (carid, ownerid, carname, brandid, carNumberPlate, status, rentcost, postdated, Fuel) VALUES ('XE0042', 'USER091', 'FORD F1', 'T001', '75Y1-25431', 'Available', 70000000, '2020-11-22', 'Xang');
 
 
 
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER001', 'XE0001','2021-11-23', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER002', 'XE0002', '2021-11-23', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER002', 'XE0003','2021-11-23', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER004', 'XE0004', '2021-11-23', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER055', 'XE0005', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER006', 'XE0006', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER007', 'XE0007', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER004', 'XE0004', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER005', 'XE0005', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER066', 'XE0006', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER021', 'XE0011','2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER012', 'XE0009', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER012', 'XE0013', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER014', 'XE0010', '2021-11-24', '2021-11-27');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER055', 'XE0015', '2021-11-23', '2021-11-30');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER016', 'XE0016', '2021-11-23', '2021-11-30');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER067', 'XE0017', '2021-11-23', '2021-11-30');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER018', 'XE0018', '2021-11-23', '2021-11-30');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER029', 'XE0019','2021-11-23', '2021-11-30');
-INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER020', 'XE0020', '2021-11-23', '2021-11-30');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER008', 'XE0001','2021-12-08', '2021-12-15');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER002', 'XE0006', '2021-12-09', '2021-12-18');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER002', 'XE0007','2021-12-09', '2021-12-15');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER004', 'XE0011', '2021-12-10', '2021-12-15');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER055', 'XE0016', '2021-12-11', '2021-12-20');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER006', 'XE0017', '2021-12-18', '2021-12-19');
+INSERT INTO contract (userid, carid, startdate, enddate) VALUES ('USER003', 'XE0022','2021-12-2', '2021-12-14');
+INSERT INTO contract (userid, carid, startdate, enddate) VALUES ('USER074', 'XE0027','2021-12-9', '2021-12-15');
+INSERT INTO contract (userid, carid, startdate, enddate) VALUES ('USER033', 'XE0029','2021-12-5', '2021-12-15');
+INSERT INTO contract (userid, carid, startdate, enddate) VALUES ('USER054', 'XE0032','2021-12-7', '2021-12-16');
+INSERT INTO contract (userid, carid, startdate, enddate) VALUES ('USER019', 'XE0035','2021-12-1', '2021-12-14');
+INSERT INTO contract (userid, carid, startdate, enddate) VALUES ('USER088', 'XE0038','2021-12-3', '2021-12-21');
+INSERT INTO contract (userid, carid, startdate, enddate) VALUES ('USER062', 'XE0040','2021-12-2', '2021-12-13');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER034', 'XE0002','2021-08-08', '2021-08-15');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ('USER012', 'XE0007', '2021-08-09', '2021-08-18');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER018', 'XE0011','2021-08-10', '2021-08-12');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER004', 'XE0013', '2021-08-10', '2021-08-11');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER055', 'XE0012', '2021-10-11', '2021-10-20');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER006', 'XE0024', '2021-11-09', '2021-11-14');
+INSERT INTO contract (userid, carid, startdate, enddate ) VALUES ( 'USER054', 'XE0029', '2021-12-01', '2021-12-03');
