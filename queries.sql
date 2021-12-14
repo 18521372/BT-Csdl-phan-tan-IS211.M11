@@ -77,3 +77,73 @@ union
 select carid, status, rentcost, branch
 from HCM.car@DBL_HCM c1, HCM.users_@DBL_HCM u1
 where c1.ownerid = u1.userid and status = 'Available' and rentcost < 50000000
+
+
+-- 7. Tim nguoi dung co xe cua tat ca hang xe My --
+
+SELECT distinct U.userid, U.fullname
+FROM 
+(select * from car
+union 
+select * from  HN.car@HN_dblink) c,
+(select * from users_
+union 
+select * from  HN.users_@HN_dblink) U
+WHERE U.userid=c.ownerid 
+AND NOT EXISTS (
+             	( SELECT brandid 
+                from brands 
+                where nation= 'USA')
+              	MINUS
+             	(SELECT brandid
+                 FROM (select * from car
+                 union 
+                 select * from  HN.car@HN_dblink) ckt
+               	 WHERE ckt.ownerid= U.userid )
+              	);
+
+-- 8. Tong so luot thue xe cua moi thuong hieu --
+
+Select brandid,  count(*) as luot_thue
+from contract ct, 
+(select * from car
+union 
+select * from  HN.car@HN_dblink) c,
+(select * from users_
+union 
+select * from  HN.users_@HN_dblink) U
+where ct.userid = U.userid
+and c.carid = ct.carid
+group by brandid;
+
+-- 9. Tinh gia tri cua moi hop dong --
+
+select U.userid, c.carid, (enddate- startdate+1)* rentcost as Tong_tien
+from contract ct,
+(select * from users_
+union
+select * from  HN.users_@HN_dblink) U,
+(select * from car
+union 
+select * from  HN.car@HN_dblink) c
+where ct.userid = U.userid
+and c.carid = ct.carid
+order by Tong_tien DESC;
+
+-- 10. Tim nhung khach hang dang thue xe co thuong hieu My --
+
+select distinct U.userid, fullname, branch
+from contract ct, brands b,
+(select * from users_
+union 
+select * from  HN.users_@HN_dblink) U,
+(select * from car
+union 
+select * from  HN.car@HN_dblink) c
+where ct.userid = U.userid
+and c.carid = ct.carid
+and c.brandid = b.brandid
+and enddate>=sysdate
+and nation= 'USA'
+and startdate<=sysdate;
+
