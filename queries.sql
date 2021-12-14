@@ -14,6 +14,27 @@ HAVING COUNT(*) = (SELECT MAX(COUNT(carid))
                    group by carid);
 
 
+-- 2. Dua ra thong tin khach hang (usedid, fullname, gender, branch) voi rolename la 'Nguoi dung' cua tat ca cac chi nhanh --
+
+select userid, fullname, gender, branch, rolename
+from roles_ r, users_ u
+where r.roleid = u.roleid and rolename = 'Nguoi dung'
+union
+select userid, fullname, gender, branch, rolename
+from roles_ r, HCM.users_@DBL_HCM u
+where r.roleid = u.roleid and rolename = 'Nguoi dung';
+
+
+-- 3. Tim hang xe co o chi nhanh Ha Noi nhung khong co o chi nhanh Ho Chi Minh --
+
+select b.brandid, brandname
+from brands b, car c
+Where c.brandid = b.brandid
+minus
+select b.brandid, brandname
+from brands b, HCM.car@DBL_HCM c
+Where c.brandid = b.brandid;
+
 -- 4. Tim xe co ca khach hang nam va nu thue o ca hai chi nhanh --
 
 (select carid from contract,
@@ -45,3 +66,14 @@ where ct.userid = U.userid
 and c.carid = ct.carid
 group by (U.userid)
 order by Tong_tien DESC
+
+
+-- 6. Tim xe o tinh trang Available va co gia thue nho hon 50000000 o ca hai chi nhanh --
+
+select carid, status, rentcost, branch
+from car c1, users_ u1
+where c1.ownerid = u1.userid and status = 'Available' and rentcost < 50000000
+union
+select carid, status, rentcost, branch
+from HCM.car@DBL_HCM c1, HCM.users_@DBL_HCM u1
+where c1.ownerid = u1.userid and status = 'Available' and rentcost < 50000000
