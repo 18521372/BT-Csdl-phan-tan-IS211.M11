@@ -1,0 +1,60 @@
+Bảng Brands
+T010
+{
+    "brandname": "Volvo",
+    "nation": "Switzerland"
+}
+
+T009
+{
+    "brandname": "Vinfast",
+    "nation": "Vietnam"
+}
+
+T008
+{
+    "brandname": "Aston Martin",
+    "nation": "England"
+}
+
+T007
+{
+    "brandname": "Lamborghini",
+    "nation": "Italia"
+}
+
+T006
+{
+    "brandname": "BMW",
+    "nation": "Germany"
+}
+
+T005
+{
+    "brandname": "Mercedes Benz",
+    "nation": "Germany"
+}
+
+T004
+{
+    "brandname": "Toyota",
+    "nation": "Japan"
+}
+
+T003
+{
+    "brandname": "Hyundai",
+    "nation": "Korea"
+}
+
+T002
+{
+    "brandname": "Honda",
+    "nation": "Japan"
+}
+
+T001
+{
+    "brandname": "FORD",
+    "nation": "USA"
+}

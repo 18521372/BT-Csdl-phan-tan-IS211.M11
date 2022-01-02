@@ -1,0 +1,120 @@
+Bảng Cars 
+XE0010
+{
+    "ownerid": "User014",
+    "carname": "Toyota T5",
+    "brandid": "T004",
+    "carNumberPlate": "59C1-82917",
+    "status": "Not Available",
+    "rentcost": "3300000",
+    "postdated": "2020-5-8",
+    "fuel": "Xang"
+}
+
+XE0009
+{
+    "ownerid": "User007",
+    "carname": "BMW B6",
+    "brandid": "T006",
+    "carNumberPlate": "33T1-93719",
+    "status": "Not Available",
+    "rentcost": "6300000",
+    "postdated": "2020-12-9",
+    "fuel": "Dau"
+}
+
+XE0008
+{
+    "ownerid": "User015",
+    "carname": "Mercedes Benz M1",
+    "brandid": "T005",
+    "carNumberPlate": "55A1-83742",
+    "status": "Available",
+    "rentcost": "5700000",
+    "postdated": "2020-12-22",
+    "fuel": "Dau"
+}
+
+XE0007
+{
+    "ownerid": "User009",
+    "carname": "Toyota T3",
+    "brandid": "T004",
+    "carNumberPlate": "71B1-19845",
+    "status": "Not Available",
+    "rentcost": "2400000",
+    "postdated": "2020-6-25",
+    "fuel": "Xang"
+}
+
+XE0006
+{
+    "ownerid": "User005",
+    "carname": "Vinfast V2",
+    "brandid": "T009",
+    "carNumberPlate": "48B1-11242",
+    "status": "Not Available",
+    "rentcost": "6500000",
+    "postdated": "2020-10-13",
+    "fuel": "Xang"
+}
+
+XE0004
+{
+    "ownerid": "User014",
+    "carname": "Aston Martin 1",
+    "brandid": "T008",
+    "carNumberPlate": "60B1-12425",
+    "status": "Available",
+    "rentcost": "4500000",
+    "postdated": "2020-8-29",
+    "fuel": "Xang"
+}
+
+XE0005
+{
+    "ownerid": "User001",
+    "carname": "FORD F2",
+    "brandid": "T001",
+    "carNumberPlate": "71W1-99999",
+    "status": "Not Available",
+    "rentcost": "6500000",
+    "postdated": "2020-11-20",
+    "fuel": "Dau"
+}
+
+XE0001
+{
+    "ownerid": "User003",
+    "carname": "Volvo B1",
+    "brandid": "T010",
+    "carNumberPlate": "50B1-77777",
+    "status": "Available",
+    "rentcost": "3500000",
+    "postdated": "2020-9-25",
+    "fuel": "Xang"
+}
+
+XE0003
+{
+    "ownerid": "User011",
+    "carname": "Hyundai H6",
+    "brandid": "T003",
+    "carNumberPlate": "42B1-21412",
+    "status": "Available",
+    "rentcost": "2500000",
+    "postdated": "2020-5-1",
+    "fuel": "Dau"
+}
+
+XE0002
+{
+    "ownerid": "User007",
+    "carname": "Honda A3",
+    "brandid": "T002",
+    "carNumberPlate": "59G1-17775",
+    "status": "Not Available",
+    "rentcost": "2500000",
+    "postdated": "2020-1-17",
+    "fuel": "Dau"
+}

@@ -1,0 +1,250 @@
+Bảng Cars 
+XE0020
+{
+    "ownerid": "User011",
+    "carname": "Honda J2",
+    "brandid": "T002",
+    "carNumberPlate": "21B3-4048",
+    "status": "Not Available",
+    "rentcost": "2800000",
+    "postdated": "2020-7-4",
+    "fuel": "Dau"
+}
+
+XE0019
+{
+    "ownerid": "User007",
+    "carname": "Aston Martin B2",
+    "brandid": "T008",
+    "carNumberPlate": "48B5-7517",
+    "status": "Available",
+    "rentcost": "3100000",
+    "postdated": "2020-3-1",
+    "fuel": "Xang"
+}
+
+XE0018
+{
+    "ownerid": "User014",
+    "carname": "Volvo K1",
+    "brandid": "T010",
+    "carNumberPlate": "06B2-7281",
+    "status": "Available",
+    "rentcost": "2700000",
+    "postdated": "2020-12-22",
+    "fuel": "Xang"
+}
+
+XE0017
+{
+    "ownerid": "User017",
+    "carname": "FORD 3",
+    "brandid": "T001",
+    "carNumberPlate": "12B0-5909",
+    "status": "Not Available",
+    "rentcost": "5200000",
+    "postdated": "2020-11-28",
+    "fuel": "Dau"
+}
+
+XE0016
+{
+    "ownerid": "User008",
+    "carname": "Aston Martin 3",
+    "brandid": "T008",
+    "carNumberPlate": "68B6-2476",
+    "status": "Available",
+    "rentcost": "2400000",
+    "postdated": "2020-5-3",
+    "fuel": "Xang"
+}
+
+XE0015
+{
+    "ownerid": "User006",
+    "carname": "Vinfast T3",
+    "brandid": "T009",
+    "carNumberPlate": "83B1-7033",
+    "status": "Available",
+    "rentcost": "3400000",
+    "postdated": "2020-6-1",
+    "fuel": "Xang"
+}
+
+XE0014
+{
+    "ownerid": "User013",
+    "carname": "Honda L4",
+    "brandid": "T002",
+    "carNumberPlate": "24B9-3591",
+    "status": "Not Available",
+    "rentcost": "3400000",
+    "postdated": "2020-6-23",
+    "fuel": "Xang"
+}
+
+XE0013
+{
+    "ownerid": "User018",
+    "carname": "BMW B2",
+    "brandid": "T006",
+    "carNumberPlate": "14B1-1155",
+    "status": "Available",
+    "rentcost": "5900000",
+    "postdated": "2020-4-24",
+    "fuel": "Dau"
+}
+
+XE0012
+{
+    "ownerid": "User006",
+    "carname": "Volvo V9",
+    "brandid": "T010",
+    "carNumberPlate": "41B5-4693",
+    "status": "Not Available",
+    "rentcost": "3200000",
+    "postdated": "2020-3-9",
+    "fuel": "Dau"
+}
+
+XE0011
+{
+    "ownerid": "User002",
+    "carname": "Hyundai A3",
+    "brandid": "T003",
+    "carNumberPlate": "90B8-0053",
+    "status": "Not Available",
+    "rentcost": "2100000",
+    "postdated": "2020-3-21",
+    "fuel": "Xang"
+}
+
+User020
+{
+    "fullname": "Pham Huu Hang",
+    "email": "phamhuuhang@gmail.com",
+    "address": "529 Hang Bai",
+    "gender": "Female",
+    "phonenumber": "0211629826",
+    "id_card": "211629826",
+    "password_users": "TXYQcT9y",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User019
+{
+    "fullname": "Nguyen Van Manh",
+    "email": "nguyenvanmanh@gmail.com",
+    "address": "164 Bich Cau",
+    "gender": "Male",
+    "phonenumber": "0263973681",
+    "id_card": "0838247220",
+    "password_users": "JzeXN6FC",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User018
+{
+    "fullname": "Tran Tien Cuong",
+    "email": "trantiencuong@gmail.com",
+    "address": "265 Lang Ha",
+    "gender": "Male",
+    "phonenumber": "0263973681",
+    "id_card": "263973681",
+    "password_users": "cdcDeJkK",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User017
+{
+    "fullname": "Bui Thanh Ngoc",
+    "email": "buithanhngoc@gmail.com",
+    "address": "319 Hang Bong",
+    "gender": "Female",
+    "phonenumber": "0610043863",
+    "id_card": "610043863",
+    "password_users": "88ExsdV4",
+    "roleid": "0",
+    "branch": "Ha Noi"
+}
+
+User016
+{
+    "fullname": "Tran Thi Nga",
+    "email": "tranthinga@gmail.com",
+    "address": "168 Hang Khay",
+    "gender": "Female",
+    "phonenumber": "0927025013",
+    "id_card": "527025013",
+    "password_users": "KqswEfXA",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User015
+{
+    "fullname": "Nguyen Xuan Coi",
+    "email": "nguyenxuancoi@gmail.com",
+    "address": "363 Hang Bai",
+    "gender": "Male",
+    "phonenumber": "0514676274",
+    "id_card": "514676274",
+    "password_users": "XqejNNsk",
+    "roleid": "0",
+    "branch": "Ha Noi"
+}
+
+User014
+{
+    "fullname": "Doan Van Dung",
+    "email": "doanvandung@gmail.com",
+    "address": "470 Buoi",
+    "gender": "Male",
+    "phonenumber": "0352499197",
+    "id_card": "222499197",
+    "password_users": "GBjYqkae",
+    "roleid": "2",
+    "branch": "Ha Noi"
+}
+
+User013
+{
+    "fullname": "La Van Quyet",
+    "email": "lavanquyet@gmail.com",
+    "address": "324 Hang Thung",
+    "gender": "Male",
+    "phonenumber": "0824156654",
+    "id_card": "124156654",
+    "password_users": "tNWu4zQm",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User012
+{
+    "fullname": "Nguyen Xuan Sang",
+    "email": "nguyenxuansang@gmail.com",
+    "address": "13 Giai Phong",
+    "gender": "Male",
+    "phonenumber": "0960306669",
+    "id_card": "660306669",
+    "password_users": "2T8MHh4n",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User011
+{
+    "fullname": "Nguyen Thi Cuc",
+    "email": "nguyenthicuc@gmail.com",
+    "address": "196 Luong Su",
+    "gender": "Female",
+    "phonenumber": "0830949435",
+    "id_card": "830949435",
+    "password_users": "cVWq7HZ5",
+    "roleid": "3",
+    "branch": "Ha Noi"
+}

@@ -1,0 +1,130 @@
+Bảng Users
+User010
+{
+    "fullname": "Le Thi Kim Oanh",
+    "email": "lethikimoanh@gmail.com",
+    "address": "14 De Tham",
+    "gender": "Female",
+    "phonenumber": "0992189015",
+    "id_card": "992189015",
+    "password_users": "9FGsMdKE",
+    "roleid": "1",
+    "branch": "Ho Chi Minh"
+}
+
+User009
+{
+    "fullname": "Tran Quoc Huy",
+    "email": "tranquochuy@gmail.com",
+    "address": "224 Huyen Quang",
+    "gender": "Male",
+    "phonenumber": "0943092417",
+    "id_card": "943092417",
+    "password_users": "y6dL3CZN",
+    "roleid": "0",
+    "branch": "Ho Chi Minh"
+}
+
+User008
+{
+    "fullname": "Nguyen Thi Van Khanh",
+    "email": "nguyenthivankhanh@gmail.com",
+    "address": "131 Nguyen Cu Tri",
+    "gender": "Female",
+    "phonenumber": "0885742218",
+    "id_card": "105742218",
+    "password_users": "UrLnAmtt",
+    "roleid": "1",
+    "branch": "Ho Chi Minh"
+}
+
+User007
+{
+    "fullname": "Nguyen Thi Hong Lien",
+    "email": "nguyenthihonglien@gmail.com",
+    "address": "410 Ham Nghi",
+    "gender": "Female",
+    "phonenumber": "0281513032",
+    "id_card": "281513032",
+    "password_users": "AuB8dJSW",
+    "roleid": "1",
+    "branch": "Ho Chi Minh"
+}
+
+User006
+{
+    "fullname": "Nguyen Hoang Anh",
+    "email": "nguyenhoanganh@gmail.com",
+    "address": "590 Nam Ky Khoi Nghia",
+    "gender": "Male",
+    "phonenumber": "0951238687",
+    "id_card": "051238687",
+    "password_users": "E5K8Bpq2",
+    "roleid": "1",
+    "branch": "Ho Chi Minh"
+}
+
+User005
+{
+    "fullname": "Pham Van Tu",
+    "email": "phamvantu@gmail.com",
+    "address": "353 Dinh Cong Trang",
+    "gender": "Male",
+    "phonenumber": "0313848488",
+    "id_card": "3313848488",
+    "password_users": "ff6x4pLJ",
+    "roleid": "0",
+    "branch": "Ho Chi Minh"
+}
+
+User004
+{
+    "fullname": "Nguyen Thuy Hang",
+    "email": "nguyenthuyhang@gmail.com",
+    "address": "187 Dong Khoi",
+    "gender": "Female",
+    "phonenumber": "0384866316",
+    "id_card": "334502921",
+    "password_users": "tHUr8gDy",
+    "roleid": "1",
+    "branch": "Ho Chi Minh"
+}
+
+User003
+{
+    "fullname": "Phan Ngoc Tham",
+    "email": "phanngoctham@gmail.com",
+    "address": "365 Huynh Thuc Khang",
+    "gender": "Female",
+    "phonenumber": "0334502921",
+    "id_card": "334502921",
+    "password_users": "4RDa5H7p",
+    "roleid": "1",
+    "branch": "Ho Chi Minh"
+}
+
+User002
+{
+    "fullname": "La Thi Hoan",
+    "email": "lathihoan@gmail.com",
+    "address": "102 Bui Thi Xuan",
+    "gender": "Female",
+    "phonenumber": "0121748852",
+    "id_card": "121748852",
+    "password_users": "fWFaB4PF",
+    "roleid": "3",
+    "branch": "Ho Chi Minh"
+}
+
+User001
+{
+    "fullname": "Nguyen Dang Khoa",
+    "email": "nguyendangkhoa@gmail.com",
+    "address": "590 Dang Thi Nhu",
+    "gender": "Male",
+    "phonenumber": "0750128893",
+    "id_card": "750128893",
+    "password_users": "jX9L8aGw",
+    "roleid": "2",
+    "branch": "Ho Chi Minh"
+}

@@ -1,0 +1,80 @@
+Bảng Contracts
+CT010
+{
+    "userid": "User014",
+    "carid": "XE0016",
+    "startdate": "2021-09-17",
+    "enddate": "2021-09-18"
+}
+
+CT009
+{
+    "userid": "User005",
+    "carid": "XE0017",
+    "startdate": "2022-01-02",
+    "enddate": "2022-01-10"
+}
+
+CT008
+{
+    "userid": "User001",
+    "carid": "XE0017",
+    "startdate": "2021-08-21",
+    "enddate": "2021-08-29"
+}
+
+CT007
+{
+    "userid": "User013",
+    "carid": "XE0019",
+    "startdate": "2021-09-06",
+    "enddate": "2021-09-09"
+}
+
+CT006
+{
+    "userid": "User009",
+    "carid": "XE0004",
+    "startdate": "2021-11-09",
+    "enddate": "2021-11-13"
+}
+
+CT005
+{
+    "userid": "User005",
+    "carid": "XE0014",
+    "startdate": "2022-01-01",
+    "enddate": "2022-01-07"
+}
+
+CT004
+{
+    "userid": "User019",
+    "carid": "XE0014",
+    "startdate": "2021-01-17",
+    "enddate": "2021-01-18"
+}
+
+CT003
+{
+    "userid": "User007",
+    "carid": "XE0003",
+    "startdate": "2021-03-02",
+    "enddate": "2021-03-07"
+}
+
+CT002
+{
+    "userid": "User004",
+    "carid": "XE0008",
+    "startdate": "2021-01-01",
+    "enddate": "2021-01-05"
+}
+
+CT001
+{
+    "userid": "User011",
+    "carid": "XE0004",
+    "startdate": "2021-08-08",
+    "enddate": "2021-08-11"
+}

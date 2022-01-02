@@ -1,0 +1,130 @@
+Bảng Users
+User020
+{
+    "fullname": "Pham Huu Hang",
+    "email": "phamhuuhang@gmail.com",
+    "address": "529 Hang Bai",
+    "gender": "Female",
+    "phonenumber": "0211629826",
+    "id_card": "211629826",
+    "password_users": "TXYQcT9y",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User019
+{
+    "fullname": "Nguyen Van Manh",
+    "email": "nguyenvanmanh@gmail.com",
+    "address": "164 Bich Cau",
+    "gender": "Male",
+    "phonenumber": "0263973681",
+    "id_card": "0838247220",
+    "password_users": "JzeXN6FC",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User018
+{
+    "fullname": "Tran Tien Cuong",
+    "email": "trantiencuong@gmail.com",
+    "address": "265 Lang Ha",
+    "gender": "Male",
+    "phonenumber": "0263973681",
+    "id_card": "263973681",
+    "password_users": "cdcDeJkK",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User017
+{
+    "fullname": "Bui Thanh Ngoc",
+    "email": "buithanhngoc@gmail.com",
+    "address": "319 Hang Bong",
+    "gender": "Female",
+    "phonenumber": "0610043863",
+    "id_card": "610043863",
+    "password_users": "88ExsdV4",
+    "roleid": "0",
+    "branch": "Ha Noi"
+}
+
+User016
+{
+    "fullname": "Tran Thi Nga",
+    "email": "tranthinga@gmail.com",
+    "address": "168 Hang Khay",
+    "gender": "Female",
+    "phonenumber": "0927025013",
+    "id_card": "527025013",
+    "password_users": "KqswEfXA",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User015
+{
+    "fullname": "Nguyen Xuan Coi",
+    "email": "nguyenxuancoi@gmail.com",
+    "address": "363 Hang Bai",
+    "gender": "Male",
+    "phonenumber": "0514676274",
+    "id_card": "514676274",
+    "password_users": "XqejNNsk",
+    "roleid": "0",
+    "branch": "Ha Noi"
+}
+
+User014
+{
+    "fullname": "Doan Van Dung",
+    "email": "doanvandung@gmail.com",
+    "address": "470 Buoi",
+    "gender": "Male",
+    "phonenumber": "0352499197",
+    "id_card": "222499197",
+    "password_users": "GBjYqkae",
+    "roleid": "2",
+    "branch": "Ha Noi"
+}
+
+User013
+{
+    "fullname": "La Van Quyet",
+    "email": "lavanquyet@gmail.com",
+    "address": "324 Hang Thung",
+    "gender": "Male",
+    "phonenumber": "0824156654",
+    "id_card": "124156654",
+    "password_users": "tNWu4zQm",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User012
+{
+    "fullname": "Nguyen Xuan Sang",
+    "email": "nguyenxuansang@gmail.com",
+    "address": "13 Giai Phong",
+    "gender": "Male",
+    "phonenumber": "0960306669",
+    "id_card": "660306669",
+    "password_users": "2T8MHh4n",
+    "roleid": "1",
+    "branch": "Ha Noi"
+}
+
+User011
+{
+    "fullname": "Nguyen Thi Cuc",
+    "email": "nguyenthicuc@gmail.com",
+    "address": "196 Luong Su",
+    "gender": "Female",
+    "phonenumber": "0830949435",
+    "id_card": "830949435",
+    "password_users": "cVWq7HZ5",
+    "roleid": "3",
+    "branch": "Ha Noi"
+}
